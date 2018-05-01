@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>buttons</title>
+</head>
+<body>
+{% for option in vote_options %}
+ <form action="{{ url_vote }}" method="post">
+  <input type="text" name="demandeId" value="{{ demande_id }}" style="display:none;">
+  <input type="text" name="nameVote" value="{{ option['nameVote'] }}" style="display:none;">
+  <button type="submit">{{ option["nameVote"] }}</button>
+</form>
+{% endfor %}
+</body>
+</html>
